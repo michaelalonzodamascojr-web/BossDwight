@@ -187,30 +187,6 @@ body {
   animation: zoomInBounce 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, floatingBaby 4s ease-in-out 1.5s infinite;
 }
 
-/* placeholder */
-.baby-placeholder {
-  width: 220px;
-  height: 230px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-
-.baby-placeholder .chair-icon {
-  font-size: 120px;
-  line-height: 1;
-  filter: drop-shadow(0 0 20px rgba(26,127,232,0.4));
-}
-
-.baby-placeholder .add-photo {
-  font-size: 11px;
-  color: rgba(255,255,255,0.4);
-  letter-spacing: 1px;
-  font-weight: 600;
-}
-
 /* === INFO ICONS BAR === */
 .info-icons-bar {
   position: relative;
@@ -429,13 +405,6 @@ body {
   line-height: 1.2;
 }
 
-.board-role {
-  font-size: 9px;
-  color: #666;
-  font-weight: 500;
-  line-height: 1.4;
-}
-
 /* === MOMENTS === */
 .moments-section {
   position: relative;
@@ -544,7 +513,7 @@ body {
   line-height: 1.4;
 }
 
-/* === COUNTDOWN SECTION (NEW PAGE) === */
+/* === COUNTDOWN SECTION === */
 .countdown-section {
   padding: 0 18px;
   margin-top: 12px;
@@ -705,13 +674,6 @@ body {
   border: 1px solid rgba(26,127,232,0.3);
 }
 
-.map-embed-wrap iframe {
-  width: 100%;
-  height: 75px;
-  border: none;
-  display: block;
-}
-
 .map-venue-label {
   font-size: 8px;
   font-weight: 700;
@@ -826,16 +788,18 @@ body {
 }
 
 .footer-quote {
-  font-size: 14px;
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
   font-weight: 700;
   color: #ffffff;
-  font-style: italic;
   margin-bottom: 12px;
-  line-height: 1.4;
+  line-height: 1.5;
   padding: 0 14px;
+  animation: fadeInUp 1.2s ease-out;
 }
 
 .footer-message {
+  font-family: 'Montserrat', sans-serif;
   font-size: 11px;
   font-weight: 500;
   color: rgba(255,255,255,0.7);
@@ -859,7 +823,7 @@ body {
   letter-spacing: 2px;
 }
 
-/* === NEW ANIMATIONS === */
+/* === ANIMATIONS === */
 @keyframes fadeInDown {
   from { opacity: 0; transform: translateY(-30px); }
   to { opacity: 1; transform: translateY(0); }
@@ -884,17 +848,6 @@ body {
   0% { opacity: 0; transform: scale(0.3); }
   70% { opacity: 1; transform: scale(1.05); }
   100% { opacity: 1; transform: scale(1); }
-}
-
-@keyframes pulseBlue {
-  0% { box-shadow: 0 0 0 0 rgba(26, 127, 232, 0.7); }
-  70% { box-shadow: 0 0 0 15px rgba(26, 127, 232, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(26, 127, 232, 0); }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(20px); }
-  50% { transform: translateY(10px); }
 }
 
 @keyframes iconFloat {
@@ -962,11 +915,6 @@ body {
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   transition: all 0.3s ease;
   backdrop-filter: blur(4px);
-}
-
-.mute-toggle:hover {
-  transform: scale(1.05);
-  background: rgba(255, 255, 255, 0.9);
 }
 
 .confetti {
@@ -1242,7 +1190,7 @@ body {
          target="_blank">OPEN IN MAPS</a>
 
       <div class="map-embed-wrap">
-        <img src="https://res.cloudinary.com/dka59tgv5/image/upload/v1778266486/AIRetouch_20260509_025427339_xtioqs.png" alt="Kroger's Roadster" style="width:100%; height:auto; display:block;">
+        <img src="https://res.cloudinary.com/dka59tgv5/image/upload/v1778266486/AIRetouch_20260509_025427339_xtioqs.png" alt="Kenny Rogers Roasters-Imus" style="width:100%; height:auto; display:block;">
       </div>
       <div class="map-venue-label">RECEPTION</div>
       <a class="open-maps-btn"
@@ -1251,9 +1199,9 @@ body {
     </div>
 
     <div class="bottom-card scroll-reveal" id="rsvp">
-      <form action="https://formspree.io/f/xrerjvkd" method="POST" id="rsvpForm">
-        <div class="bottom-card-title">Kindly submit your attendance report</div>
-        <div class="bottom-card-supporting">Please submit your corporate status report for Boss Dwight's big day.</div>
+      <form action="https://formspree.io/f/xwvyrywn" method="POST" id="rsvpForm">
+        <div class="bottom-card-title">Kindly submit your RSVP not later than June 20, 2026.</div>
+        <div class="bottom-card-supporting" style="font-weight:700; color:#1a7fe8;">Please submit your corporate status report for Boss Dwight's big day.</div>
         
         <label class="form-label">NAME OF GUEST:</label>
         <input class="form-input" type="text" name="Guest Name" placeholder="" id="nameInput" required>
@@ -1271,13 +1219,12 @@ body {
         <label class="form-label">MESSAGE FOR THE BOSS:</label>
         <textarea class="form-textarea" name="Message" id="messageInput"></textarea>
 
-        <label class="form-label" style="margin-top:10px;">WILL YOU BE ATTENDING?</label>
         <div class="radio-group">
           <label class="radio-option">
-            <input type="radio" name="Attendance" value="reporting" required> REPORTING ON DUTY
+            <input type="radio" name="Attendance" value="Reporting on duty" required> REPORTING ON DUTY
           </label>
           <label class="radio-option sick-leave">
-            <input type="radio" name="Attendance" value="sick"> ON LEAVE
+            <input type="radio" name="Attendance" value="On leave"> ON LEAVE
           </label>
         </div>
 
@@ -1289,7 +1236,7 @@ body {
   </div>
 
   <div class="footer scroll-reveal">
-    <div class="footer-quote">"Our little Boss is ready for his first blessing..."</div>
+    <div class="footer-quote">Boss Dwight is turning one and ready for his blessing, join us us we celebrate his birthday and baptism. A milestone launch he'll never remember, but we'll never forget</div>
     <div class="footer-message">Thank you for being a part of this special day as we celebrate Boss Dwight's entrance into the family of God.</div>
     <div class="footer-highlight-box">
       <div class="footer-highlight-text">boss dwight 2026 (c) all rights reserve</div>
@@ -1305,14 +1252,11 @@ function openEnvelope() {
   const hero = document.getElementById('heroSection');
   overlay.style.transform = 'translate(-50%, -100%)';
   
-  // Trigger Hero Animations
   hero.classList.add('play-anim');
   
-  // Start music on user interaction (envelope click)
   const audio = document.getElementById('bgMusic');
   audio.play().catch(e => console.log("Audio play failed:", e));
   
-  // Party Confetti
   spawnConfetti();
   
   setTimeout(() => {
@@ -1323,9 +1267,9 @@ function openEnvelope() {
 // Info Popup Logic
 const infoData = {
   date: { title: 'DATE', value: 'JULY 5, 2026', sub: 'Mark your calendars!' },
-  time: { title: 'TIME', value: '9:30 AM', sub: 'Please arrive on time.' },
-  ceremony: { title: 'CEREMONY', value: 'IMUS CATHEDRAL', sub: 'Imus, Cavite, Philippines' },
-  reception: { title: 'RECEPTION', value: "KROGER'S ROADSTER", sub: 'Imus, Cavite, Philippines' }
+  time: { title: 'TIME', value: 'CHURCH: 10:00 AM | RECEPTION: 11:00 AM', sub: 'Event schedule' },
+  ceremony: { title: 'CEREMONY', value: 'IMUS CATHEDRAL', sub: '10:00 AM Ceremony | Imus, Cavite' },
+  reception: { title: 'RECEPTION', value: "KENNY ROGERS ROASTERS-IMUS", sub: '11:00 AM Reception | Imus, Cavite' }
 };
 
 function openInfoPopup(type) {
@@ -1378,8 +1322,6 @@ function spawnConfetti() {
 // Moments highlight
 function highlightMoment(element) {
   const mStrip = document.getElementById('momentsStrip');
-  
-  // Use requestAnimationFrame to ensure the class update and scroll happen together smoothly
   requestAnimationFrame(() => {
     document.querySelectorAll('.moment-item').forEach(item => {
       item.classList.remove('center-card');
@@ -1395,14 +1337,10 @@ function highlightMoment(element) {
   });
 }
 
-// Moments dots 
 const mStrip = document.getElementById('momentsStrip');
 const mDots = document.querySelectorAll('.moments-dot');
-let isAutoScrolling = false;
 
 mStrip.addEventListener('scroll', () => {
-  if (isAutoScrolling) return;
-
   const items = document.querySelectorAll('.moment-item');
   const stripCenter = mStrip.scrollLeft + mStrip.offsetWidth / 2;
   
@@ -1436,11 +1374,12 @@ document.getElementById('rsvpForm').addEventListener('submit', function(e) {
   const submitBtn = document.querySelector('.submit-btn');
   const successMsg = document.getElementById('successMsg');
   
+  const originalText = submitBtn.textContent;
   submitBtn.textContent = 'SUBMITTING...';
-  submitBtn.style.background = '#0d5fb9';
+  submitBtn.disabled = true;
 
   fetch(form.action, {
-    method: form.method,
+    method: 'POST',
     body: new FormData(form),
     headers: {
         'Accept': 'application/json'
@@ -1450,16 +1389,18 @@ document.getElementById('rsvpForm').addEventListener('submit', function(e) {
       form.style.display = 'none';
       successMsg.style.display = 'block';
     } else {
-      submitBtn.textContent = 'ERROR. TRY AGAIN';
+      throw new Error();
     }
   }).catch(error => {
     submitBtn.textContent = 'ERROR. TRY AGAIN';
+    submitBtn.disabled = false;
+    setTimeout(() => { if(submitBtn.textContent === 'ERROR. TRY AGAIN') submitBtn.textContent = originalText; }, 3000);
   });
 });
 
 // Countdown Logic
 function updateCountdown() {
-  const weddingDate = new Date('July 5, 2026 09:30:00').getTime();
+  const weddingDate = new Date('July 5, 2026 10:00:00').getTime();
   const now = new Date().getTime();
   const gap = weddingDate - now;
 
@@ -1499,10 +1440,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Scroll Reveal Observer
-const observerOptions = {
-  threshold: 0.1
-};
-
+const observerOptions = { threshold: 0.1 };
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
